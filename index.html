@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="https://fonts.googleapis.com/css?family=Share+Tech+Mono" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(-45deg,
+                    #35155D,
+                    #000);
+            background-size: 400% 400%;
+            animation: gradient 9s ease infinite;
+            height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+
+
+        @-webkit-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+
+            100% {
+                margin-top: -100%;
+            }
+        }
+
+        @-moz-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+
+            100% {
+                margin-top: -100%;
+            }
+        }
+
+        @keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+
+            100% {
+                margin-top: -100%;
+            }
+        }
+
+        @-webkit-keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+
+            100% {
+                margin-left: 50px;
+            }
+        }
+
+        @-moz-keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+
+            100% {
+                margin-left: 50px;
+            }
+        }
+
+        @keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+
+            100% {
+                margin-left: 50px;
+            }
+        }
+
+        .x1 {
+            -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+            left: -5%;
+            top: 5%;
+
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            transform: scale(0.6);
+        }
+
+        .x2 {
+            -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+            left: 5%;
+            top: 80%;
+
+            -webkit-transform: scale(0.4);
+            -moz-transform: scale(0.4);
+            transform: scale(0.4);
+        }
+
+        .x3 {
+            -webkit-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+            left: 10%;
+            top: 40%;
+
+            -webkit-transform: scale(0.7);
+            -moz-transform: scale(0.7);
+            transform: scale(0.7);
+        }
+
+        .x4 {
+            -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+
+            left: 20%;
+            top: 0;
+
+            -webkit-transform: scale(0.3);
+            -moz-transform: scale(0.3);
+            transform: scale(0.3);
+        }
+
+        .x5 {
+            -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+            left: 30%;
+            top: 50%;
+
+            -webkit-transform: scale(0.5);
+            -moz-transform: scale(0.5);
+            transform: scale(0.5);
+        }
+
+        .x6 {
+            -webkit-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+            left: 50%;
+            top: 0;
+
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+        }
+
+        .x7 {
+            -webkit-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+            left: 65%;
+            top: 70%;
+
+            -webkit-transform: scale(0.4);
+            -moz-transform: scale(0.4);
+            transform: scale(0.4);
+        }
+
+        .x8 {
+            -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+            animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+
+            left: 80%;
+            top: 10%;
+
+            -webkit-transform: scale(0.3);
+            -moz-transform: scale(0.3);
+            transform: scale(0.3);
+        }
+
+        .x9 {
+            -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+            left: 90%;
+            top: 50%;
+
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            transform: scale(0.6);
+        }
+
+        .x10 {
+            -webkit-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+            left: 80%;
+            top: 80%;
+
+            -webkit-transform: scale(0.3);
+            -moz-transform: scale(0.3);
+            transform: scale(0.3);
+        }
+
+        /* OBJECTS */
+
+        .bubble {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+            -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+            -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+
+            height: 200px;
+            position: absolute;
+            width: 200px;
+        }
+
+        .bubble:after {
+            background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+            /* FF3.6+ */
+            background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(70%, rgba(255, 255, 255, 0)));
+            /* Chrome,Safari4+ */
+            background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+            /* Opera 12+ */
+            background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+            /* IE10+ */
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#00ffffff', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+            -webkit-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+            -moz-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+
+            content: "";
+            height: 180px;
+            left: 10px;
+            position: absolute;
+            width: 180px;
+        }
+
+
+        .move {
+            animation: move linear 1s infinite;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateY(0vh);
+            }
+
+            to {
+                transform: translateY(-20vh);
+            }
+        }
+
+        .sun-moon-icon {
+            position: absolute;
+            width: 20%;
+            height: 20%;
+            margin-top: -5%;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bubble x1"></div>
+    <div class="bubble x2"></div>
+    <div class="bubble x3"></div>
+    <div class="bubble x4"></div>
+    <div class="bubble x5"></div>
+    <div class="bubble x6"></div>
+    <div class="bubble x7"></div>
+    <div class="bubble x8"></div>
+    <div class="bubble x9"></div>
+    <div class="bubble x10"></div>
+
+
+    <div id="clock1">
+        <div class="sun-moon-icon" id="sunMoonIcon1"></div>
+        <p id="date1">{{ date1 }}</p>
+        <p id="time1">{{ time1 }}</p>
+        <p id="text1">Buenos Aires <br> ARGENTINA</p>
+    </div>
+
+    <div id="clock2">
+        <div class="sun-moon-icon" id="sunMoonIcon2"></div>
+        <p id="date2">{{ date2 }}</p>
+        <p id="time2">{{ time2 }}</p>
+        <p id="text2">Coimbatore <br> INDIA</p>
+    </div>
+
+    <div id="clock3">
+        <div class="sun-moon-icon" id="sunMoonIcon3"></div>
+        <p id="date3">{{ date3 }}</p>
+        <p id="time3">{{ time3 }}</p>
+        <p id="text3">Tokyo <br> JAPAN</p>
+    </div>
+
+    <div id="clock4">
+        <div class="sun-moon-icon" id="sunMoonIcon4"></div>
+        <p id="date4">{{ date4 }}</p>
+        <p id="time4">{{ time4 }}</p>
+        <p id="text4">Riyadh <br> SAUDI ARABIA</p>
+    </div>
+
+    <div id="clock5">
+        <div class="sun-moon-icon" id="sunMoonIcon5"></div>
+        <p id="date5">{{ date5 }}</p>
+        <p id="time5">{{ time5 }}</p>
+        <p id="text5">Detroit, MI <br> USA</p>
+    </div>
+
+    <div id="clock6">
+        <div class="sun-moon-icon" id="sunMoonIcon6"></div>
+        <p id="date6">{{ date6 }}</p>
+        <p id="time6">{{ time6 }}</p>
+        <p id="text6">Bangkok <br> THAILAND</p>
+    </div>
+
+
+    <script>
+        var clock1 = new Vue({
+            el: "#clock1",
+            data: {
+                time1: "",
+                date1: ""
+            }
+        });
+
+
+
+        var week1 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID1 = setInterval(updateTime1, 1000);
+        updateTime1();
+        function updateTime1() {
+            var cd = new Date(
+                new Date().toLocaleString("en-US", {
+                    timeZone: "America/Argentina/Buenos_Aires"
+                })
+            );
+
+
+
+            clock1.time1 =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock1.date1 =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week1[cd.getDay()];
+
+            const hours1 = cd.getHours();
+
+            const isDaytime1 = hours1 >= 6 && hours1 < 18;
+
+            if (isDaytime1) {
+                // alert("Day");
+                sunMoonIcon1.style.backgroundImage = "url('sun-icon.png')";
+            } else {
+                // alert("Night");
+                sunMoonIcon1.style.backgroundImage = "url('moon-icon.png')";
+            }
+
+        }
+
+
+
+        function zeroPadding(num, digit) {
+            var zero = "";
+            for (var i = 0; i < digit; i++) {
+                zero += "0";
+            }
+            return (zero + num).slice(-digit);
+        }
+
+        var clock2 = new Vue({
+            el: "#clock2",
+            data: {
+                time2: "",
+                date2: ""
+            }
+        });
+
+        var week2 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID2 = setInterval(updatetime2, 1000);
+        updatetime2();
+        function updatetime2() {
+            var cd = new Date();
+            clock2.time2 =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock2.date2 =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week2[cd.getDay()];
+
+            const hours2 = cd.getHours();
+
+            const isDaytime2 = hours2 >= 6 && hours2 < 18;
+
+            if (isDaytime2) {
+                sunMoonIcon2.style.backgroundImage = "url('sun-icon.png')";
+            } else {
+                sunMoonIcon2.style.backgroundImage = "url('moon-icon.png')";
+            }
+        }
+
+        var clock3 = new Vue({
+            el: "#clock3",
+            data: {
+                time3: "",
+                date3: ""
+            }
+        });
+
+        var week3 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID3 = setInterval(updatetime3, 1000);
+        updatetime3();
+        function updatetime3() {
+            var cd = new Date(
+                new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" })
+            );
+            clock3.time3 =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock3.date3 =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week3[cd.getDay()];
+
+            const hours3 = cd.getHours();
+
+            const isDaytime3 = hours3 >= 6 && hours3 < 18;
+
+            if (isDaytime3) {
+                sunMoonIcon3.style.backgroundImage = "url('sun-icon.png')";
+            } else {
+                sunMoonIcon3.style.backgroundImage = "url('moon-icon.png')";
+            }
+        }
+
+        var clock4 = new Vue({
+            el: "#clock4",
+            data: {
+                time4: "",
+                date4: ""
+            }
+        });
+
+        var week4 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID4 = setInterval(updatetime4, 1000);
+        updatetime4();
+        function updatetime4() {
+            var cd = new Date(
+                new Date().toLocaleString("en-US", { timeZone: "Asia/Riyadh" })
+            );
+            clock4.time4 =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock4.date4 =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week4[cd.getDay()];
+
+            const hours4 = cd.getHours();
+
+            const isDaytime4 = hours4 >= 6 && hours4 < 18;
+
+            if (isDaytime4) {
+                sunMoonIcon4.style.backgroundImage = "url('sun-icon.png')";
+            } else {
+                sunMoonIcon4.style.backgroundImage = "url('moon-icon.png')";
+            }
+        }
+
+        var clock5 = new Vue({
+            el: "#clock5",
+            data: {
+                time5: "",
+                date5: ""
+            }
+        });
+
+        var week5 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID5 = setInterval(updatetime5, 1000);
+        updatetime5();
+        function updatetime5() {
+            var cd = new Date(
+                new Date().toLocaleString("en-US", { timeZone: "America/Detroit" })
+            );
+            clock5.time5 =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock5.date5 =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week5[cd.getDay()];
+
+            const hours5 = cd.getHours();
+
+            const isDaytime5 = hours5 >= 6 && hours5 < 18;
+
+            if (isDaytime5) {
+                sunMoonIcon5.style.backgroundImage = "url('sun-icon.png')";
+            } else {
+                sunMoonIcon5.style.backgroundImage = "url('moon-icon.png')";
+            }
+        }
+
+        var clock6 = new Vue({
+            el: "#clock6",
+            data: {
+                time6: "",
+                date6: ""
+            }
+        });
+
+        var week6 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        var timerID6 = setInterval(updatetime6, 1000);
+        updatetime6();
+        function updatetime6() {
+            var cd = new Date(
+                new Date().toLocaleString("en-US", { timeZone: "Asia/Bangkok" })
+            );
+            clock6.time6 =
+                zeroPadding(cd.getHours(), 2) +
+                ":" +
+                zeroPadding(cd.getMinutes(), 2) +
+                ":" +
+                zeroPadding(cd.getSeconds(), 2);
+            clock6.date6 =
+                zeroPadding(cd.getFullYear(), 4) +
+                "-" +
+                zeroPadding(cd.getMonth() + 1, 2) +
+                "-" +
+                zeroPadding(cd.getDate(), 2) +
+                " " +
+                week6[cd.getDay()];
+
+            const hours6 = cd.getHours();
+
+            const isDaytime6 = hours6 >= 6 && hours6 < 18;
+
+            if (isDaytime6) {
+                sunMoonIcon6.style.backgroundImage = "url('sun-icon.png')";
+            } else {
+                sunMoonIcon6.style.backgroundImage = "url('moon-icon.png')";
+            }
+        }
+
+    </script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        /* body {
+            background: #0f3854;
+            background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+            background-size: 100%;
+        } */
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #clock1 {
+            font-family: "Share Tech Mono", monospace;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            bottom: 45%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+
+            #time1 {
+                letter-spacing: 0.05em;
+                font-size: 70px;
+                padding: 7px 0;
+            }
+
+            #date1 {
+                letter-spacing: 0.1em;
+                font-size: 24px;
+            }
+
+            #text1 {
+                letter-spacing: 0.1em;
+                font-size: 30px;
+                padding: 20px 0 0;
+            }
+        }
+
+        #clock2 {
+            font-family: "Share Tech Mono", monospace;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left: 15%;
+            bottom: 45%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+
+            #time2 {
+                letter-spacing: 0.05em;
+                font-size: 70px;
+                padding: 7px 0;
+            }
+
+            #date2 {
+                letter-spacing: 0.1em;
+                font-size: 24px;
+            }
+
+            #text2 {
+                letter-spacing: 0.1em;
+                font-size: 30px;
+                padding: 20px 0 0;
+            }
+        }
+
+        #clock3 {
+            font-family: "Share Tech Mono", monospace;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left: 85%;
+            bottom: 45%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+
+            #time3 {
+                letter-spacing: 0.05em;
+                font-size: 70px;
+                padding: 7px 0;
+            }
+
+            #date3 {
+                letter-spacing: 0.1em;
+                font-size: 24px;
+            }
+
+            #text3 {
+                letter-spacing: 0.1em;
+                font-size: 30px;
+                padding: 20px 0 0;
+            }
+        }
+
+        #clock4 {
+            font-family: "Share Tech Mono", monospace;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 75%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+
+            #time4 {
+                letter-spacing: 0.05em;
+                font-size: 70px;
+                padding: 7px 0;
+            }
+
+            #date4 {
+                letter-spacing: 0.1em;
+                font-size: 24px;
+            }
+
+            #text4 {
+                letter-spacing: 0.1em;
+                font-size: 30px;
+                padding: 30px 0 0;
+            }
+        }
+
+        #clock5 {
+            font-family: "Share Tech Mono", monospace;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left: 15%;
+            top: 75%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+
+            #time5 {
+                letter-spacing: 0.05em;
+                font-size: 70px;
+                padding: 7px 0;
+            }
+
+            #date5 {
+                letter-spacing: 0.1em;
+                font-size: 24px;
+            }
+
+            #text5 {
+                letter-spacing: 0.1em;
+                font-size: 30px;
+                padding: 30px 0 0;
+            }
+        }
+
+        #clock6 {
+            font-family: "Share Tech Mono", monospace;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left:85%;
+            top: 75%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+
+            #time6 {
+                letter-spacing: 0.05em;
+                font-size: 70px;
+                padding: 7px 0;
+            }
+
+            #date6 {
+                letter-spacing: 0.1em;
+                font-size: 24px;
+            }
+
+            #text6 {
+                letter-spacing: 0.1em;
+                font-size: 30px;
+                padding: 30px 0 0;
+            }
+        }
+    </style>
+</body>
+
+</html>
