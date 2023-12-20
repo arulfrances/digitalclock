@@ -3,9 +3,9 @@
 
 <head>
 
-    <link rel="https://fonts.googleapis.com/css?family=Share+Tech+Mono" />
+    <link rel="stylesheet" href="google-fonts.css" />
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script type="text/javascript" src="vue.min.js"></script>
 
     <style>
         body {
@@ -15,6 +15,9 @@
             background-size: 400% 400%;
             animation: gradient 9s ease infinite;
             height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
         @keyframes gradient {
@@ -297,21 +300,31 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+
+        #background-wrap {
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
     </style>
 </head>
 
 <body>
-    <div class="bubble x1"></div>
-    <div class="bubble x2"></div>
-    <div class="bubble x3"></div>
-    <div class="bubble x4"></div>
-    <div class="bubble x5"></div>
-    <div class="bubble x6"></div>
-    <div class="bubble x7"></div>
-    <div class="bubble x8"></div>
-    <div class="bubble x9"></div>
-    <div class="bubble x10"></div>
-
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
 
     <div id="clock1">
         <div class="sun-moon-icon" id="sunMoonIcon1"></div>
@@ -343,7 +356,7 @@
 
     <div id="clock5">
         <div class="sun-moon-icon" id="sunMoonIcon5"></div>
-       <p id="date5">&nbsp; &nbsp; &nbsp;{{ date5 }}</p>
+        <p id="date5">&nbsp; &nbsp; &nbsp;{{ date5 }}</p>
         <p id="time5">{{ time5 }}</p>
         <p id="text5">Buenos Aires <br> ARGENTINA</p>
     </div>
@@ -372,8 +385,8 @@
         updateTime1();
         function updateTime1() {
             var cd = new Date(
-                new Date().toLocaleString("en-US", 
-                { timeZone: "Asia/Tokyo" })
+                new Date().toLocaleString("en-US",
+                    { timeZone: "Asia/Tokyo" })
             );
 
 
@@ -382,9 +395,9 @@
                 zeroPadding(cd.getHours(), 2) +
                 ":" +
                 zeroPadding(cd.getMinutes(), 2);
-                //  +
-                // ":" +
-                // zeroPadding(cd.getSeconds(), 2);
+            //  +
+            // ":" +
+            // zeroPadding(cd.getSeconds(), 2);
             clock1.date1 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -434,10 +447,10 @@
             clock2.time2 =
                 zeroPadding(cd.getHours(), 2) +
                 ":" +
-                zeroPadding(cd.getMinutes(), 2) ;
-                // +
-                // ":" +
-                // zeroPadding(cd.getSeconds(), 2);
+                zeroPadding(cd.getMinutes(), 2);
+            // +
+            // ":" +
+            // zeroPadding(cd.getSeconds(), 2);
             clock2.date2 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -476,10 +489,10 @@
             clock3.time3 =
                 zeroPadding(cd.getHours(), 2) +
                 ":" +
-                zeroPadding(cd.getMinutes(), 2) ;
-                // +
-                // ":" +
-                // zeroPadding(cd.getSeconds(), 2);
+                zeroPadding(cd.getMinutes(), 2);
+            // +
+            // ":" +
+            // zeroPadding(cd.getSeconds(), 2);
             clock3.date3 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -519,9 +532,9 @@
                 zeroPadding(cd.getHours(), 2) +
                 ":" +
                 zeroPadding(cd.getMinutes(), 2);
-                // +
-                // ":" +
-                // zeroPadding(cd.getSeconds(), 2);
+            // +
+            // ":" +
+            // zeroPadding(cd.getSeconds(), 2);
             clock4.date4 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -562,10 +575,10 @@
             clock5.time5 =
                 zeroPadding(cd.getHours(), 2) +
                 ":" +
-                zeroPadding(cd.getMinutes(), 2) ;
-                // +
-                // ":" +
-                // zeroPadding(cd.getSeconds(), 2);
+                zeroPadding(cd.getMinutes(), 2);
+            // +
+            // ":" +
+            // zeroPadding(cd.getSeconds(), 2);
             clock5.date5 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -605,9 +618,9 @@
                 zeroPadding(cd.getHours(), 2) +
                 ":" +
                 zeroPadding(cd.getMinutes(), 2);
-                //  +
-                // ":" +
-                // zeroPadding(cd.getSeconds(), 2);
+            //  +
+            // ":" +
+            // zeroPadding(cd.getSeconds(), 2);
             clock6.date6 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
