@@ -4,7 +4,6 @@
 <head>
 
     <link rel="stylesheet" href="google-fonts.css" />
-    <!-- <link href='https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'/> -->
 
     <script type="text/javascript" src="vue.min.js"></script>
 
@@ -310,72 +309,6 @@
             top: 0;
             z-index: -1;
         }
-
-        .element {
-            width: calc(33.33%);
-            /* 20px for margin */
-            margin: 10px;
-            padding: 10px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-
-        .center-div {
-            position: absolute;
-            margin: auto;
-            top: 45%;
-            right: 0;
-            bottom: 30%;
-            left: 30%;
-            width: 100%;
-            height: 100px;
-            color: #ccc;
-            border-radius: 3px;
-            font-size: 30px;
-        }
-
-        .fa-beat {
-            animation: fa-beat 5s ease infinite;
-        }
-
-        @keyframes fa-beat {
-            0% {
-                transform: scale(1);
-            }
-
-            5% {
-                transform: scale(1.25);
-            }
-
-            20% {
-                transform: scale(1);
-            }
-
-            30% {
-                transform: scale(1);
-            }
-
-            35% {
-                transform: scale(1.25);
-            }
-
-            50% {
-                transform: scale(1);
-            }
-
-            55% {
-                transform: scale(1.25);
-            }
-
-            70% {
-                transform: scale(1);
-            }
-        }
-
-        .heart {
-            color: red;
-        }
     </style>
 </head>
 
@@ -392,49 +325,47 @@
         <div class="bubble x9"></div>
         <div class="bubble x10"></div>
     </div>
-    <!-- <div class="center-div">Built with <p class="heart"><i class="fa fa-heart fa-1x fa-beat"></i></p>@ Hirotec India</div> -->
-    <div id="clock1" class="element">
+
+    <div id="clock1">
         <div class="sun-moon-icon" id="sunMoonIcon1"></div>
-        <p id="date1">&nbsp;{{ date1 }}</p>
+        <p id="date1">&nbsp; &nbsp; &nbsp;{{ date1 }}</p>
         <p id="time1">{{ time1 }}</p>
-        <p id="text1">JAPAN</p>
+        <p id="text1">Tokyo <br> JAPAN</p>
     </div>
 
-    <div id="clock2" class="element">
+    <div id="clock2">
         <div class="sun-moon-icon" id="sunMoonIcon2"></div>
-        <p id="date2">&nbsp;{{ date2 }}</p>
+        <p id="date2">&nbsp; &nbsp; &nbsp;{{ date2 }}</p>
         <p id="time2">{{ time2 }}</p>
-        <p id="text2">INDIA</p>
+        <p id="text2">Coimbatore <br> INDIA</p>
     </div>
 
-    <div id="clock3" class="element">
+    <div id="clock3">
         <div class="sun-moon-icon" id="sunMoonIcon3"></div>
-        <p id="date3">&nbsp;{{ date3 }}</p>
+        <p id="date3">&nbsp; &nbsp; &nbsp;{{ date3 }}</p>
         <p id="time3">{{ time3 }}</p>
-        <p id="text3">US (EAST)</p>
+        <p id="text3">Detroit,MI <br> USA</p>
     </div>
 
-
-
-    <div id="clock4" class="element">
+    <div id="clock4">
         <div class="sun-moon-icon" id="sunMoonIcon4"></div>
-        <p id="date4">&nbsp;{{ date4 }}</p>
+        <p id="date4">&nbsp; &nbsp; &nbsp;{{ date4 }}</p>
         <p id="time4">{{ time4 }}</p>
-        <p id="text4">SAUDI ARABIA</p>
+        <p id="text4">Riyadh <br> SAUDI ARABIA</p>
     </div>
 
-    <div id="clock5" class="element">
+    <div id="clock5">
         <div class="sun-moon-icon" id="sunMoonIcon5"></div>
-        <p id="date5">&nbsp;{{ date5 }}</p>
+        <p id="date5">&nbsp; &nbsp; &nbsp;{{ date5 }}</p>
         <p id="time5">{{ time5 }}</p>
-        <p id="text5">GERMANY</p>
+        <p id="text5">Buenos Aires <br> ARGENTINA</p>
     </div>
 
-    <div id="clock6" class="element">
+    <div id="clock6">
         <div class="sun-moon-icon" id="sunMoonIcon6"></div>
-        <p id="date6">&nbsp;{{ date6 }}</p>
+        <p id="date6">&nbsp; &nbsp; &nbsp;{{ date6 }}</p>
         <p id="time6">{{ time6 }}</p>
-        <p id="text6">THAILAND</p>
+        <p id="text6">Bangkok <br> THAILAND</p>
     </div>
 
 
@@ -638,7 +569,7 @@
         function updatetime5() {
             var cd = new Date(
                 new Date().toLocaleString("en-US", {
-                    timeZone: "Europe/Berlin"
+                    timeZone: "America/Argentina/Buenos_Aires"
                 })
             );
             clock5.time5 =
@@ -733,8 +664,8 @@
             color: #ffffff;
             text-align: center;
             position: absolute;
-            left: 50%;
-            bottom: 40%;
+            left: 47%;
+            bottom: 45%;
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
@@ -747,12 +678,12 @@
 
             #date1 {
                 letter-spacing: 0.1em;
-                font-size: 27px;
+                font-size: 23px;
             }
 
             #text1 {
                 letter-spacing: 0.1em;
-                font-size: 40px;
+                font-size: 34px;
                 padding: 20px 0 0;
             }
         }
@@ -763,7 +694,7 @@
             text-align: center;
             position: absolute;
             left: 15%;
-            bottom: 40%;
+            bottom: 45%;
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
@@ -776,12 +707,12 @@
 
             #date2 {
                 letter-spacing: 0.1em;
-                font-size: 27px;
+                font-size: 23px;
             }
 
             #text2 {
                 letter-spacing: 0.1em;
-                font-size: 40px;
+                font-size: 34px;
                 padding: 20px 0 0;
             }
         }
@@ -791,8 +722,8 @@
             color: #ffffff;
             text-align: center;
             position: absolute;
-            right: -20%;
-            bottom: 40%;
+            right: -5%;
+            bottom: 45%;
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
@@ -805,12 +736,12 @@
 
             #date3 {
                 letter-spacing: 0.1em;
-                font-size: 27px;
+                font-size: 23px;
             }
 
             #text3 {
                 letter-spacing: 0.1em;
-                font-size: 40px;
+                font-size: 34px;
                 padding: 20px 0 0;
             }
         }
@@ -821,7 +752,7 @@
             text-align: center;
             position: absolute;
             left: 50%;
-            top: 80%;
+            top: 75%;
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
@@ -834,12 +765,12 @@
 
             #date4 {
                 letter-spacing: 0.1em;
-                font-size: 27px;
+                font-size: 23px;
             }
 
             #text4 {
                 letter-spacing: 0.1em;
-                font-size: 40px;
+                font-size: 34px;
                 padding: 30px 0 0;
             }
         }
@@ -850,7 +781,7 @@
             text-align: center;
             position: absolute;
             left: 15%;
-            top: 80%;
+            top: 75%;
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
@@ -863,12 +794,12 @@
 
             #date5 {
                 letter-spacing: 0.1em;
-                font-size: 27px;
+                font-size: 23px;
             }
 
             #text5 {
                 letter-spacing: 0.1em;
-                font-size: 40px;
+                font-size: 34px;
                 padding: 30px 0 0;
             }
         }
@@ -878,8 +809,8 @@
             color: #ffffff;
             text-align: center;
             position: absolute;
-            right: -20%;
-            top: 80%;
+            right: -5%;
+            top: 75%;
             transform: translate(-50%, -50%);
             color: #fff;
             text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
@@ -892,16 +823,17 @@
 
             #date6 {
                 letter-spacing: 0.1em;
-                font-size: 27px;
+                font-size: 23px;
             }
 
             #text6 {
                 letter-spacing: 0.1em;
-                font-size: 40px;
+                font-size: 34px;
                 padding: 30px 0 0;
             }
         }
     </style>
+    <footer>Built with Love @ Hirotec India</footer>
 </body>
 
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #scroll-container {
+            overflow-y: scroll;
+            height: 300px; /* Set the height of the scrolling container */
+            border: 1px solid #ccc;
+        }
+
+        #content {
+            padding: 10px;
+        }
+    </style>
+    <title>Text Scroller</title>
+</head>
+<body>
+    <div id="scroll-container">
+        <div id="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac urna auctor, consequat velit et, scelerisque tortor. Suspendisse potenti. Praesent ullamcorper massa in arcu eleifend, sit amet fermentum sapien convallis. Duis ut justo non justo bibendum congue.</p>
+            <!-- Add more content here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to scroll the content
+        function scrollContent() {
+            var container = document.getElementById('scroll-container');
+            container.scrollTop += 1; // You can adjust the scroll speed by changing this value
+        }
+
+        // Set interval to call the scrollContent function at regular intervals
+        setInterval(scrollContent, 50); // Adjust the interval based on your preference
+    </script>
+</body>
+</html>

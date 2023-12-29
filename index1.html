@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  align-items: center;   /* Center items vertically */
+    }
+
+    .box {
+        flex-basis: 33.33%;  /* Ensure 3 items per row */
+  text-align: center;   /* Center content within each div */
+  border: 1px solid black; /* Optional border for visual clarity */
+  padding: 10px;   
+    }
+  </style>
+</head>
+<body>
+    <div
+ 
+    class="container">
+    
+  <div class="box"><div id="clock1">
+    <div class="sun-moon-icon" id="sunMoonIcon1"></div>
+    <p id="date1">&nbsp; &nbsp; &nbsp;{{ date1 }}</p>
+    <p id="time1">{{ time1 }}</p>
+    <p id="text1">Tokyo <br> JAPAN</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="box"><div id="clock2">
+    <div class="sun-moon-icon" id="sunMoonIcon2"></div>
+    <p id="date2">&nbsp; &nbsp; &nbsp;{{ date2 }}</p>
+    <p id="time2">{{ time2 }}</p>
+    <p id="text2">Coimbatore <br> INDIA</p>
+</div></div>
+  <div class="box"><div id="clock3">
+    <div class="sun-moon-icon" id="sunMoonIcon3"></div>
+    <p id="date3">&nbsp; &nbsp; &nbsp;{{ date3 }}</p>
+    <p id="time3">{{ time3 }}</p>
+    <p id="text3">Detroit,MI <br> USA</p>
+</div></div>
+  <div class="box"><div id="clock4">
+    <div class="sun-moon-icon" id="sunMoonIcon4"></div>
+    <p id="date4">&nbsp; &nbsp; &nbsp;{{ date4 }}</p>
+    <p id="time4">{{ time4 }}</p>
+    <p id="text4">Riyadh <br> SAUDI ARABIA</p>
+</div></div>
+  <div class="box"><div id="clock5">
+    <div class="sun-moon-icon" id="sunMoonIcon5"></div>
+    <p id="date5">&nbsp; &nbsp; &nbsp;{{ date5 }}</p>
+    <p id="time5">{{ time5 }}</p>
+    <p id="text5">Buenos Aires <br> ARGENTINA</p>
+</div></div>
+  <div class="box"><div id="clock6">
+    <div class="sun-moon-icon" id="sunMoonIcon6"></div>
+    <p id="date6">&nbsp; &nbsp; &nbsp;{{ date6 }}</p>
+    <p id="time6">{{ time6 }}</p>
+    <p id="text6">Bangkok <br> THAILAND</p>
+</div></div></div>
+</div>
+</body>
+</html>
