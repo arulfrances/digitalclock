@@ -51,7 +51,6 @@
             box-sizing: border-box;
             text-align: center;
         }
-
     </style>
 </head>
 
@@ -78,21 +77,6 @@
         <p id="text3">US (EAST)</p>
     </div>
 
-
-    <div id="verticalFlip">
-        <span>“If you live with passion you will always be happy.”</span>
-        <span>“You only stop, when you stop trying.”</span>
-        <span>“With the new day comes new strength and new thoughts.”</span>
-        <span>“Optimism is the faith that leads to achievement.”</span>
-        <span>“Opportunities don't happen, you create them.”</span>
-        <span>“Everything you can imagine is real.”</span>
-        <span>“When you have a dream, you've got to grab it and never let go.”</span>
-        <span>“Nothing is impossible. The word itself says 'I'm possible!'”</span>
-        <span>“The bad news is time flies. The good news is you're the pilot.”</span>
-        <span>“Dream big and dare to fail.”</span>
-        <span>“In the middle of difficulty lies opportunity.”</span>
-        <span>Built with LOVE @ HIROTEC INDIA</span>
-    </div>
 
     <div id="clock4" class="element">
         <div class="sun-moon-icon" id="sunMoonIcon4"></div>
@@ -136,15 +120,14 @@
                     { timeZone: "Asia/Tokyo" })
             );
 
+            var hours = cd.getHours(); // gives the value in 24 hours format
+            var AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            var minutes = cd.getMinutes();
+            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+ AmOrPm;
 
+            clock1.time1 = finalTime;
 
-            clock1.time1 =
-                zeroPadding(cd.getHours(), 2) +
-                ":" +
-                zeroPadding(cd.getMinutes(), 2);
-            //  +
-            // ":" +
-            // zeroPadding(cd.getSeconds(), 2);
             clock1.date1 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -191,10 +174,19 @@
         updatetime2();
         function updatetime2() {
             var cd = new Date();
-            clock2.time2 =
-                zeroPadding(cd.getHours(), 2) +
-                ":" +
-                zeroPadding(cd.getMinutes(), 2);
+
+            var hours = cd.getHours(); // gives the value in 24 hours format
+            var AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            var minutes = cd.getMinutes();
+            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2) + AmOrPm;
+
+            clock2.time2 = finalTime;
+
+            // clock2.time2 =
+            //     zeroPadding(cd.getHours(), 2) +
+            //     ":" +
+            //     zeroPadding(cd.getMinutes(), 2);
             // +
             // ":" +
             // zeroPadding(cd.getSeconds(), 2);
@@ -233,10 +225,14 @@
             var cd = new Date(
                 new Date().toLocaleString("en-US", { timeZone: "America/Detroit" })
             );
-            clock3.time3 =
-                zeroPadding(cd.getHours(), 2) +
-                ":" +
-                zeroPadding(cd.getMinutes(), 2);
+            var hours = cd.getHours(); // gives the value in 24 hours format
+            var AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            var minutes = cd.getMinutes();
+            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+ AmOrPm;
+
+            clock3.time3 = finalTime;
+
             // +
             // ":" +
             // zeroPadding(cd.getSeconds(), 2);
@@ -275,13 +271,14 @@
             var cd = new Date(
                 new Date().toLocaleString("en-US", { timeZone: "Asia/Riyadh" })
             );
-            clock4.time4 =
-                zeroPadding(cd.getHours(), 2) +
-                ":" +
-                zeroPadding(cd.getMinutes(), 2);
-            // +
-            // ":" +
-            // zeroPadding(cd.getSeconds(), 2);
+            var hours = cd.getHours(); // gives the value in 24 hours format
+            var AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            var minutes = cd.getMinutes();
+            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+AmOrPm;
+
+            clock4.time4 = finalTime;
+
             clock4.date4 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -319,13 +316,14 @@
                     timeZone: "Europe/Berlin"
                 })
             );
-            clock5.time5 =
-                zeroPadding(cd.getHours(), 2) +
-                ":" +
-                zeroPadding(cd.getMinutes(), 2);
-            // +
-            // ":" +
-            // zeroPadding(cd.getSeconds(), 2);
+            var hours = cd.getHours(); // gives the value in 24 hours format
+            var AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            var minutes = cd.getMinutes();
+            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+AmOrPm;
+
+            clock5.time5 = finalTime;
+
             clock5.date5 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -361,13 +359,14 @@
             var cd = new Date(
                 new Date().toLocaleString("en-US", { timeZone: "Asia/Bangkok" })
             );
-            clock6.time6 =
-                zeroPadding(cd.getHours(), 2) +
-                ":" +
-                zeroPadding(cd.getMinutes(), 2);
-            //  +
-            // ":" +
-            // zeroPadding(cd.getSeconds(), 2);
+            var hours = cd.getHours(); // gives the value in 24 hours format
+            var AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            var minutes = cd.getMinutes();
+            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2) +AmOrPm;
+
+            clock6.time6 = finalTime;
+
             clock6.date6 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
