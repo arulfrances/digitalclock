@@ -44,11 +44,20 @@
             z-index: -1;
         }
 
-        .element {
+        .element1 {
             width: calc(33.33%);
             /* 20px for margin */
             margin: 10px;
-            padding: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .element2 {
+            width: calc(33.33%);
+            /* 20px for margin */
+            margin: 10px;
+            padding: -10px;
             box-sizing: border-box;
             text-align: center;
         }
@@ -57,21 +66,21 @@
 
 <body>
 
-    <div id="clock1" class="element">
+    <div id="clock1" class="element1">
         <div class="sun-moon-icon" id="sunMoonIcon1"></div>
         <p id="date1">&nbsp;{{ date1 }}</p>
         <p id="time1">{{ time1 }}</p>
         <p id="text1">JAPAN</p>
     </div>
 
-    <div id="clock2" class="element">
+    <div id="clock2" class="element1">
         <div class="sun-moon-icon" id="sunMoonIcon2"></div>
         <p id="date2">&nbsp;{{ date2 }}</p>
         <p id="time2">{{ time2 }}</p>
         <p id="text2">INDIA</p>
     </div>
 
-    <div id="clock3" class="element">
+    <div id="clock3" class="element1">
         <div class="sun-moon-icon" id="sunMoonIcon3"></div>
         <p id="date3">&nbsp;{{ date3 }}</p>
         <p id="time3">{{ time3 }}</p>
@@ -79,21 +88,21 @@
     </div>
 
 
-    <div id="clock4" class="element">
+    <div id="clock4" class="element2">
         <div class="sun-moon-icon" id="sunMoonIcon4"></div>
         <p id="date4">&nbsp;{{ date4 }}</p>
         <p id="time4">{{ time4 }}</p>
         <p id="text4">SAUDI</p>
     </div>
 
-    <div id="clock5" class="element">
+    <div id="clock5" class="element2">
         <div class="sun-moon-icon" id="sunMoonIcon5"></div>
         <p id="date5">&nbsp;{{ date5 }}</p>
         <p id="time5">{{ time5 }}</p>
         <p id="text5">GERMANY</p>
     </div>
 
-    <div id="clock6" class="element">
+    <div id="clock6" class="element2">
         <div class="sun-moon-icon" id="sunMoonIcon6"></div>
         <p id="date6">&nbsp;{{ date6 }}</p>
         <p id="time6">{{ time6 }}</p>
