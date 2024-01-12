@@ -1,114 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTI World Clock</title>
     <link rel="stylesheet" href="google-fonts.css" />
     <!-- <link href='https://netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'/> -->
 
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="vue.min.js"></script>
 
-
-
     <style>
         body {
-            background: #000;
-            background-size: 400% 400%;
-            animation: gradient 9s ease infinite;
-            height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-        }
-
-        .sun-moon-icon {
-            position: absolute;
-            width: 15%;
-            height: 15%;
-            margin-top: -5%;
-            padding-top: 5px;
-            padding-left: -5px;
-            padding-bottom: 10px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        #background-wrap {
-            bottom: 0;
-            left: 0;
-            position: fixed;
-            right: 0;
-            top: 0;
-            z-index: -1;
-        }
-
-        .element1 {
-            width: calc(33.33%);
-            /* 20px for margin */
-            margin: 10px;
-            padding: 5px;
+            height: 100vh;
+            /* 100% of the viewport height */
+            width: 100vw;
+            /* 100% of the viewport width */
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            /* Adjust the font family as needed */
+            background-color: #000;
+            /* Set the background color as needed */
+            color: #333;
+            overflow-y: hidden;
+            /* Hide vertical scrollbar */
+            overflow-x: hidden;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            height: 33.33%;
+        }
+
+        .col {
+            flex: 1;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
+
+        @media (max-width: 768px) {
+            .col {
+                flex: 1 1 100%;
+            }
+        }
+
+
+        #time1,
+        #time2,
+        #time3,
+        #time4,
+        #time5,
+        #time6 {
+            color: #ffffff;
             text-align: center;
+            letter-spacing: 0.02em;
+            font-size: 220px;
+            position: relative;
+            line-height: 200px;
         }
 
-        .element2 {
-            width: calc(33.33%);
-            /* 20px for margin */
-            margin: 10px;
-            padding: -10px;
-            box-sizing: border-box;
+        #country1,
+        #country2,
+        #country3,
+        #country4,
+        #country5,
+        #country6 {
+            letter-spacing: 0.1em;
+            font-size: 78px;
+            position: relative;
+            color: white;
             text-align: center;
         }
     </style>
 </head>
 
 <body>
-
-    <div id="clock1" class="element1">
-        <div class="sun-moon-icon" id="sunMoonIcon1"></div>
-        <p id="date1">&nbsp;{{ date1 }}</p>
-        <p id="time1">{{ time1 }}</p>
-        <p id="text1">JAPAN</p>
+    <div class="row">
+        <div class="col" id="clock1">
+            <div id="country1">THAILAND</div>
+            <div id="time1">{{ time1 }}</div>
+            <span id="ampm1"></span>
+        </div>
+        <div class="col" id="clock2">
+            <div id="country2">GERMANY</div>
+            <div id="time2">{{ time2 }}</div>
+            <span id="ampm2"></span>
+        </div>
     </div>
+    <div class="row">
+        <div class="col" id="clock3">
+            <div id="country3">INDIA</div>
+            <div id="time3">{{ time3 }}</div>
+            <span id="ampm3"></span>
+        </div>
 
-    <div id="clock2" class="element1">
-        <div class="sun-moon-icon" id="sunMoonIcon2"></div>
-        <p id="date2">&nbsp;{{ date2 }}</p>
-        <p id="time2">{{ time2 }}</p>
-        <p id="text2">INDIA</p>
+        <div class="col" id="clock4">
+            <div id="country4">SAUDI</div>
+            <div id="time4">{{ time4 }}</div>
+            <span id="ampm4"></span>
+        </div>
     </div>
-
-    <div id="clock3" class="element1">
-        <div class="sun-moon-icon" id="sunMoonIcon3"></div>
-        <p id="date3">&nbsp;{{ date3 }}</p>
-        <p id="time3">{{ time3 }}</p>
-        <p id="text3">DETROIT</p>
+    <div class="row">
+        <div class="col" id="clock5">
+            <div id="country5">JAPAN</div>
+            <div id="time5">{{ time5 }}</div>
+            <span id="ampm5"></span>
+        </div>
+        <div class="col" id="clock6">
+            <div id="country6"> US (EAST)</div>
+            <div id="time6">{{ time6 }}</div>
+            <span id="ampm6"></span>
+        </div>
     </div>
-
-
-    <div id="clock4" class="element2">
-        <div class="sun-moon-icon" id="sunMoonIcon4"></div>
-        <p id="date4">&nbsp;{{ date4 }}</p>
-        <p id="time4">{{ time4 }}</p>
-        <p id="text4">SAUDI</p>
     </div>
-
-    <div id="clock5" class="element2">
-        <div class="sun-moon-icon" id="sunMoonIcon5"></div>
-        <p id="date5">&nbsp;{{ date5 }}</p>
-        <p id="time5">{{ time5 }}</p>
-        <p id="text5">GERMANY</p>
-    </div>
-
-    <div id="clock6" class="element2">
-        <div class="sun-moon-icon" id="sunMoonIcon6"></div>
-        <p id="date6">&nbsp;{{ date6 }}</p>
-        <p id="time6">{{ time6 }}</p>
-        <p id="text6">THAILAND</p>
-    </div>
-
 
     <script>
         var clock1 = new Vue({
@@ -127,16 +136,17 @@
         function updateTime1() {
             var cd = new Date(
                 new Date().toLocaleString("en-US",
-                    { timeZone: "Asia/Tokyo" })
+                    { timeZone: "Asia/Bangkok" })
             );
-
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
             var minutes = cd.getMinutes();
-            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+ " "+AmOrPm;
+            var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
             clock1.time1 = finalTime;
+
+            clock1.AmOrPm =  + AmOrPm;
 
             clock1.date1 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -151,13 +161,13 @@
 
             const isDaytime1 = hours1 >= 6 && hours1 < 18;
 
-            if (isDaytime1) {
-                // alert("Day");
-                sunMoonIcon1.style.backgroundImage = "url('sun-icon.png')";
-            } else {
-                // alert("Night");
-                sunMoonIcon1.style.backgroundImage = "url('moon-icon.png')";
-            }
+            // if (isDaytime1) {
+            //     // alert("Day");
+            //     sunMoonIcon1.style.backgroundImage = "url('sun-icon.png')";
+            // } else {
+            //     // alert("Night");
+            //     sunMoonIcon1.style.backgroundImage = "url('moon-icon.png')";
+            // }
 
         }
 
@@ -179,27 +189,23 @@
             }
         });
 
+       
+
         var week2 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
         var timerID2 = setInterval(updatetime2, 1000);
         updatetime2();
         function updatetime2() {
-            var cd = new Date();
+            var cd = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Berlin"}));
 
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
             var minutes = cd.getMinutes();
-            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2) + " "+AmOrPm;
+            var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
             clock2.time2 = finalTime;
+            clock2.AmOrPm =  + AmOrPm;
 
-            // clock2.time2 =
-            //     zeroPadding(cd.getHours(), 2) +
-            //     ":" +
-            //     zeroPadding(cd.getMinutes(), 2);
-            // +
-            // ":" +
-            // zeroPadding(cd.getSeconds(), 2);
             clock2.date2 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -213,11 +219,11 @@
 
             const isDaytime2 = hours2 >= 6 && hours2 < 18;
 
-            if (isDaytime2) {
-                sunMoonIcon2.style.backgroundImage = "url('sun-icon.png')";
-            } else {
-                sunMoonIcon2.style.backgroundImage = "url('moon-icon.png')";
-            }
+            // if (isDaytime2) {
+            //     sunMoonIcon2.style.backgroundImage = "url('sun-icon.png')";
+            // } else {
+            //     sunMoonIcon2.style.backgroundImage = "url('moon-icon.png')";
+            // }
         }
 
         var clock3 = new Vue({
@@ -233,19 +239,17 @@
         updatetime3();
         function updatetime3() {
             var cd = new Date(
-                new Date().toLocaleString("en-US", { timeZone: "America/Detroit" })
+                new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
             );
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
             var minutes = cd.getMinutes();
-            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+ " "+AmOrPm;
+            var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
+            clock3.AmOrPm =  + AmOrPm;
             clock3.time3 = finalTime;
 
-            // +
-            // ":" +
-            // zeroPadding(cd.getSeconds(), 2);
             clock3.date3 =
                 zeroPadding(cd.getFullYear(), 4) +
                 "-" +
@@ -259,11 +263,6 @@
 
             const isDaytime3 = hours3 >= 6 && hours3 < 18;
 
-            if (isDaytime3) {
-                sunMoonIcon3.style.backgroundImage = "url('sun-icon.png')";
-            } else {
-                sunMoonIcon3.style.backgroundImage = "url('moon-icon.png')";
-            }
         }
 
         var clock4 = new Vue({
@@ -285,9 +284,11 @@
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
             var minutes = cd.getMinutes();
-            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+" "+AmOrPm;
+            var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
             clock4.time4 = finalTime;
+
+            clock4.AmOrPm =  + AmOrPm;
 
             clock4.date4 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -302,11 +303,11 @@
 
             const isDaytime4 = hours4 >= 6 && hours4 < 18;
 
-            if (isDaytime4) {
-                sunMoonIcon4.style.backgroundImage = "url('sun-icon.png')";
-            } else {
-                sunMoonIcon4.style.backgroundImage = "url('moon-icon.png')";
-            }
+            // if (isDaytime4) {
+            //     sunMoonIcon4.style.backgroundImage = "url('sun-icon.png')";
+            // } else {
+            //     sunMoonIcon4.style.backgroundImage = "url('moon-icon.png')";
+            // }
         }
 
         var clock5 = new Vue({
@@ -323,16 +324,17 @@
         function updatetime5() {
             var cd = new Date(
                 new Date().toLocaleString("en-US", {
-                    timeZone: "Europe/Berlin"
+                    timeZone: "Asia/Tokyo"
                 })
             );
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
             var minutes = cd.getMinutes();
-            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2)+" "+AmOrPm;
+            var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
             clock5.time5 = finalTime;
+            clock5.AmOrPm =  + AmOrPm;
 
             clock5.date5 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -347,11 +349,11 @@
 
             const isDaytime5 = hours5 >= 6 && hours5 < 18;
 
-            if (isDaytime5) {
-                sunMoonIcon5.style.backgroundImage = "url('sun-icon.png')";
-            } else {
-                sunMoonIcon5.style.backgroundImage = "url('moon-icon.png')";
-            }
+            // if (isDaytime5) {
+            //     sunMoonIcon5.style.backgroundImage = "url('sun-icon.png')";
+            // } else {
+            //     sunMoonIcon5.style.backgroundImage = "url('moon-icon.png')";
+            // }
         }
 
         var clock6 = new Vue({
@@ -367,15 +369,17 @@
         updatetime6();
         function updatetime6() {
             var cd = new Date(
-                new Date().toLocaleString("en-US", { timeZone: "Asia/Bangkok" })
+                new Date().toLocaleString("en-US", { timeZone: "America/Detroit" })
             );
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
             var minutes = cd.getMinutes();
-            var finalTime = zeroPadding(hours,2) + ":" + zeroPadding(minutes,2) +" "+AmOrPm;
+            var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
             clock6.time6 = finalTime;
+
+            clock6.AmOrPm =  + AmOrPm;
 
             clock6.date6 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -390,205 +394,13 @@
 
             const isDaytime6 = hours6 >= 6 && hours6 < 18;
 
-            if (isDaytime6) {
-                sunMoonIcon6.style.backgroundImage = "url('sun-icon.png')";
-            } else {
-                sunMoonIcon6.style.backgroundImage = "url('moon-icon.png')";
-            }
+            // if (isDaytime6) {
+            //     sunMoonIcon6.style.backgroundImage = "url('sun-icon.png')";
+            // } else {
+            //     sunMoonIcon6.style.backgroundImage = "url('moon-icon.png')";
+            // }
         }
-
     </script>
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        /* body {
-            background: #0f3854;
-            background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
-            background-size: 100%;
-        } */
-
-        p {
-            margin: 0;
-            padding: 0;
-        }
-
-        #clock1 {
-            font-family: "Share Tech Mono", monospace;
-            color: #ffffff;
-            text-align: center;
-            position: absolute;
-            left: 50%;
-            bottom: 40%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-
-            #time1 {
-                letter-spacing: 0.05em;
-                font-size: 70px;
-                padding: 7px 0;
-            }
-
-            #date1 {
-                letter-spacing: 0.1em;
-                font-size: 35px;
-                padding-left: 7px;
-            }
-
-            #text1 {
-                letter-spacing: 0.1em;
-                font-size: 70px;
-                padding: 20px 0 0;
-            }
-        }
-
-        #clock2 {
-            font-family: "Share Tech Mono", monospace;
-            color: #ffffff;
-            text-align: center;
-            position: absolute;
-            left: 15%;
-            bottom: 40%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-
-            #time2 {
-                letter-spacing: 0.05em;
-                font-size: 70px;
-                padding: 7px 0;
-            }
-
-            #date2 {
-                letter-spacing: 0.1em;
-                font-size: 35px;
-                padding-left: 7px;
-            }
-
-            #text2 {
-                letter-spacing: 0.1em;
-                font-size: 70px;
-                padding: 20px 0 0;
-            }
-        }
-
-        #clock3 {
-            font-family: "Share Tech Mono", monospace;
-            color: #ffffff;
-            text-align: center;
-            position: absolute;
-            right: -20%;
-            bottom: 40%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-
-            #time3 {
-                letter-spacing: 0.05em;
-                font-size: 70px;
-                padding: 7px 0;
-            }
-
-            #date3 {
-                letter-spacing: 0.1em;
-                font-size: 35px;
-                padding-left: 7px;
-            }
-
-            #text3 {
-                letter-spacing: 0.1em;
-                font-size: 70px;
-                padding: 20px 0 0;
-            }
-        }
-
-        #clock4 {
-            font-family: "Share Tech Mono", monospace;
-            color: #ffffff;
-            text-align: center;
-            position: absolute;
-            left: 50%;
-            top: 80%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-
-            #time4 {
-                letter-spacing: 0.05em;
-                font-size: 70px;
-                padding: 7px 0;
-            }
-
-            #date4 {
-                letter-spacing: 0.1em;
-                font-size: 35px;
-                padding-left: 7px;
-            }
-
-            #text4 {
-                letter-spacing: 0.1em;
-                font-size: 70px;
-                padding: 30px 0 0;
-            }
-        }
-
-        #clock5 {
-            font-family: "Share Tech Mono", monospace;
-            color: #ffffff;
-            text-align: center;
-            position: absolute;
-            left: 15%;
-            top: 80%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-
-            #time5 {
-                letter-spacing: 0.05em;
-                font-size: 70px;
-                padding: 7px 0;
-            }
-
-            #date5 {
-                letter-spacing: 0.1em;
-                font-size: 35px;
-                padding-left: 7px;
-            }
-
-            #text5 {
-                letter-spacing: 0.1em;
-                font-size: 70px;
-                padding: 30px 0 0;
-            }
-        }
-
-        #clock6 {
-            font-family: "Share Tech Mono", monospace;
-            color: #ffffff;
-            text-align: center;
-            position: absolute;
-            right: -20%;
-            top: 80%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-
-            #time6 {
-                letter-spacing: 0.05em;
-                font-size: 70px;
-                padding: 7px 0;
-            }
-
-            #date6 {
-                letter-spacing: 0.1em;
-                font-size: 35px;
-                padding-left: 7px;
-            }
-
-            #text6 {
-                letter-spacing: 0.1em;
-                font-size: 70px;
-                padding: 30px 0 0;
-            }
-        }
-    </style>
 </body>
 
 </html>
