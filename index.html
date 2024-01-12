@@ -82,7 +82,7 @@
 <body>
     <div class="row">
         <div class="col" id="clock1">
-            <div id="country1">THAILAND</div>
+            <div id="country1">JAPAN</div>
             <div id="time1">{{ time1 }}</div>
             <span id="ampm1"></span>
         </div>
@@ -94,20 +94,20 @@
     </div>
     <div class="row">
         <div class="col" id="clock3">
-            <div id="country3">INDIA</div>
+            <div id="country3">THAILAND</div>
             <div id="time3">{{ time3 }}</div>
             <span id="ampm3"></span>
         </div>
 
         <div class="col" id="clock4">
-            <div id="country4">SAUDI</div>
+            <div id="country4">MEXICO</div>
             <div id="time4">{{ time4 }}</div>
             <span id="ampm4"></span>
         </div>
     </div>
     <div class="row">
         <div class="col" id="clock5">
-            <div id="country5">JAPAN</div>
+            <div id="country5">INDIA</div>
             <div id="time5">{{ time5 }}</div>
             <span id="ampm5"></span>
         </div>
@@ -135,8 +135,9 @@
         updateTime1();
         function updateTime1() {
             var cd = new Date(
-                new Date().toLocaleString("en-US",
-                    { timeZone: "Asia/Bangkok" })
+                new Date().toLocaleString("en-US", {
+                    timeZone: "Asia/Tokyo"
+                })
             );
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
@@ -146,7 +147,7 @@
 
             clock1.time1 = finalTime;
 
-            clock1.AmOrPm =  + AmOrPm;
+            clock1.AmOrPm = + AmOrPm;
 
             clock1.date1 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -189,14 +190,14 @@
             }
         });
 
-       
+
 
         var week2 = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
         var timerID2 = setInterval(updatetime2, 1000);
         updatetime2();
         function updatetime2() {
-            var cd = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Berlin"}));
-
+           
+            var cd = new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/Berlin" }));
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
@@ -204,7 +205,7 @@
             var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
             clock2.time2 = finalTime;
-            clock2.AmOrPm =  + AmOrPm;
+            clock2.AmOrPm = + AmOrPm;
 
             clock2.date2 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -238,16 +239,20 @@
         var timerID3 = setInterval(updatetime3, 1000);
         updatetime3();
         function updatetime3() {
+            
+
             var cd = new Date(
-                new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+                new Date().toLocaleString("en-US",
+                    { timeZone: "Asia/Bangkok" })
             );
+
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
             var minutes = cd.getMinutes();
             var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
-            clock3.AmOrPm =  + AmOrPm;
+            clock3.AmOrPm = + AmOrPm;
             clock3.time3 = finalTime;
 
             clock3.date3 =
@@ -277,9 +282,8 @@
         var timerID4 = setInterval(updatetime4, 1000);
         updatetime4();
         function updatetime4() {
-            var cd = new Date(
-                new Date().toLocaleString("en-US", { timeZone: "Asia/Riyadh" })
-            );
+
+            var cd = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Mexico_City" }));
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
@@ -288,7 +292,7 @@
 
             clock4.time4 = finalTime;
 
-            clock4.AmOrPm =  + AmOrPm;
+            clock4.AmOrPm = + AmOrPm;
 
             clock4.date4 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -323,10 +327,10 @@
         updatetime5();
         function updatetime5() {
             var cd = new Date(
-                new Date().toLocaleString("en-US", {
-                    timeZone: "Asia/Tokyo"
-                })
+                new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
             );
+
+            
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
@@ -334,7 +338,7 @@
             var finalTime = zeroPadding(hours, 2) + ":" + zeroPadding(minutes, 2);
 
             clock5.time5 = finalTime;
-            clock5.AmOrPm =  + AmOrPm;
+            clock5.AmOrPm = + AmOrPm;
 
             clock5.date5 =
                 zeroPadding(cd.getFullYear(), 4) +
@@ -379,7 +383,7 @@
 
             clock6.time6 = finalTime;
 
-            clock6.AmOrPm =  + AmOrPm;
+            clock6.AmOrPm = + AmOrPm;
 
             clock6.date6 =
                 zeroPadding(cd.getFullYear(), 4) +
