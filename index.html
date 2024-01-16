@@ -22,9 +22,8 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
             /* Adjust the font family as needed */
-            background-color: #000;
             /* Set the background color as needed */
-            color: #333;
+            /*  color: #333; */
             overflow-y: hidden;
             /* Hide vertical scrollbar */
             overflow-x: hidden;
@@ -56,7 +55,6 @@
         #time4,
         #time5,
         #time6 {
-            color: #ffffff;
             text-align: center;
             letter-spacing: 0.02em;
             font-size: 220px;
@@ -73,15 +71,36 @@
             letter-spacing: 0.1em;
             font-size: 78px;
             position: relative;
-            color: white;
             text-align: center;
         }
+
+        .sun-moon-icon {
+            position: relative;
+            top: 80px;
+            right: 60px;
+            width: 20%;
+            height: 20%;
+        }
+
+
+
+        /* .day {
+            background-color: white;
+            color: black;
+        }
+
+        .night {
+            background-color: black;
+            color: white;
+        } */
     </style>
 </head>
 
 <body>
     <div class="row">
         <div class="col" id="clock1">
+            <!-- <div class="sun-moon-icon" id="sunMoonIcon1"></div> -->
+
             <div id="country1">JAPAN</div>
             <div id="time1">{{ time1 }}</div>
             <span id="ampm1"></span>
@@ -162,12 +181,30 @@
 
             const isDaytime1 = hours1 >= 6 && hours1 < 18;
 
+            if (isDaytime1) {
+
+                $("#clock1").css({ backgroundColor: 'white' });
+
+            }
+            else {
+
+                $("#clock1").css({ backgroundColor: 'black' })
+            }
+
             // if (isDaytime1) {
-            //     // alert("Day");
+            //     //alert("Day");
             //     sunMoonIcon1.style.backgroundImage = "url('sun-icon.png')";
             // } else {
             //     // alert("Night");
             //     sunMoonIcon1.style.backgroundImage = "url('moon-icon.png')";
+            // }
+
+            // if (isDaytime1) {
+            //     $('.col').toggleClass('day night');
+            // }else{
+            //     if (isDaytime1) {
+            //     $('.col').toggleClass('night day');
+            // }
             // }
 
         }
@@ -196,7 +233,7 @@
         var timerID2 = setInterval(updatetime2, 1000);
         updatetime2();
         function updatetime2() {
-           
+
             var cd = new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/Berlin" }));
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
@@ -220,11 +257,16 @@
 
             const isDaytime2 = hours2 >= 6 && hours2 < 18;
 
-            // if (isDaytime2) {
-            //     sunMoonIcon2.style.backgroundImage = "url('sun-icon.png')";
-            // } else {
-            //     sunMoonIcon2.style.backgroundImage = "url('moon-icon.png')";
-            // }
+            if (isDaytime2) {
+
+                $("#clock2").css({ backgroundColor: 'white' });
+
+            }
+            else {
+
+                $("#clock2").css({ backgroundColor: 'black' })
+            }
+
         }
 
         var clock3 = new Vue({
@@ -239,7 +281,7 @@
         var timerID3 = setInterval(updatetime3, 1000);
         updatetime3();
         function updatetime3() {
-            
+
 
             var cd = new Date(
                 new Date().toLocaleString("en-US",
@@ -268,8 +310,20 @@
 
             const isDaytime3 = hours3 >= 6 && hours3 < 18;
 
-        }
 
+
+            if (isDaytime3) {
+
+                $("#clock3").css({ backgroundColor: 'white' });
+                $("#clock3").css({ color: 'black' });
+
+            }
+            else {
+
+                $("#clock3").css({ backgroundColor: 'black' });
+                $("#clock3").css({ color: 'white' });
+            }
+        }
         var clock4 = new Vue({
             el: "#clock4",
             data: {
@@ -307,11 +361,17 @@
 
             const isDaytime4 = hours4 >= 6 && hours4 < 18;
 
-            // if (isDaytime4) {
-            //     sunMoonIcon4.style.backgroundImage = "url('sun-icon.png')";
-            // } else {
-            //     sunMoonIcon4.style.backgroundImage = "url('moon-icon.png')";
-            // }
+            if (isDaytime4) {
+
+                $("#clock4").css({ backgroundColor: 'white' });
+                $("#clock4").css({ color: 'black' });
+
+            }
+            else {
+
+                $("#clock4").css({ backgroundColor: 'black' });
+                $("#clock4").css({ color: 'white' });
+            }
         }
 
         var clock5 = new Vue({
@@ -330,7 +390,7 @@
                 new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
             );
 
-            
+
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
@@ -358,6 +418,18 @@
             // } else {
             //     sunMoonIcon5.style.backgroundImage = "url('moon-icon.png')";
             // }
+
+            if (isDaytime5) {
+
+                $("#clock5").css({ backgroundColor: 'white' });
+                $("#clock5").css({ color: 'black' });
+
+            }
+            else {
+
+                $("#clock5").css({ backgroundColor: 'black' });
+                $("#clock5").css({ color: 'white' });
+            }
         }
 
         var clock6 = new Vue({
@@ -403,6 +475,18 @@
             // } else {
             //     sunMoonIcon6.style.backgroundImage = "url('moon-icon.png')";
             // }
+
+            if (isDaytime6) {
+
+                $("#clock6").css({ backgroundColor: 'white' });
+                $("#clock6").css({ color: 'black' });
+
+            }
+            else {
+
+                $("#clock6").css({ backgroundColor: 'black' });
+                $("#clock6").css({ color: 'white' });
+            }
         }
     </script>
 </body>
