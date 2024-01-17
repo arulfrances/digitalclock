@@ -119,7 +119,7 @@
         </div>
 
         <div class="col" id="clock4">
-            <div id="country4">MEXICO</div>
+            <div id="country4">US (EAST)</div>
             <div id="time4">{{ time4 }}</div>
             <span id="ampm4"></span>
         </div>
@@ -131,7 +131,7 @@
             <span id="ampm5"></span>
         </div>
         <div class="col" id="clock6">
-            <div id="country6"> US (EAST)</div>
+            <div id="country6"> MEXICO </div>
             <div id="time6">{{ time6 }}</div>
             <span id="ampm6"></span>
         </div>
@@ -341,7 +341,7 @@
         updatetime4();
         function updatetime4() {
 
-            var cd = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Mexico_City" }));
+            var cd = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Detroit" }));
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
             hours = (hours % 12) || 12;
@@ -449,7 +449,7 @@
         updatetime6();
         function updatetime6() {
             var cd = new Date(
-                new Date().toLocaleString("en-US", { timeZone: "America/Detroit" })
+                new Date().toLocaleString("en-US", { timeZone: "America/Mexico_City" })
             );
             var hours = cd.getHours(); // gives the value in 24 hours format
             var AmOrPm = hours >= 12 ? 'PM' : 'AM';
